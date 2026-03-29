@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>La falsa Memoria</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reset.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/white.min.css">
+    
+    <!-- Tailwind CSS for utility styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        /* Custom Premium Theme */
+        body {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: #0f172a;
+        }
+        
+        .reveal {
+            background: transparent;
+        }
+
+        .reveal h1, .reveal h2, .reveal h3, .reveal h4 {
+            font-family: 'Outfit', sans-serif;
+            text-transform: none;
+            letter-spacing: -0.02em;
+            color: #1e293b;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .reveal h1 { font-size: 3.5em; font-weight: 800; background: -webkit-linear-gradient(45deg, #0ea5e9, #4f46e5); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .reveal h2 { color: #4f46e5; font-weight: 700; }
+        .reveal p, .reveal li { color: #334155; font-weight: 400; line-height: 1.6; font-size: 1.1em; }
+        
+        .glass-box {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.1);
+        }
+
+        .icon-item {
+            position: absolute;
+            width: 80px;
+            opacity: 1;
+            z-index: 100;
+            cursor: grab;
+            filter: drop-shadow(2px 2px 8px rgba(0,0,0,0.2));
+            transition: transform 0.2s;
+        }
+        .icon-item:active {
+            cursor: grabbing;
+            transform: scale(1.1);
+        }
+
+        ul.custom-list { list-style: none; padding: 0; }
+        ul.custom-list li { padding: 10px 0; border-bottom: 1px solid rgba(0,0,0,0.1); }
+        ul.custom-list li:before { content: "✨ "; color: #4f46e5; }
+
+        .quote-slide {
+            font-family: 'Georgia', serif;
+            font-size: 1.8em !important;
+            font-style: italic;
+            color: #1e293b !important;
+            line-height: 1.8;
+            background: -webkit-linear-gradient(45deg, #7c3aed, #db2777);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .btn-play {
+            background: linear-gradient(90deg, #6366f1 0%, #a14bf8 100%);
+            border: none;
+            border-radius: 50px;
+            color: white;
+            padding: 15px 40px;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 10px 20px rgba(99, 102, 241, 0.4);
+            transition: transform 0.2s;
+            font-family: inherit;
+        }
+        .btn-play:hover { transform: scale(1.05); }
+        .btn-play:active { transform: scale(0.95); }
+
+        #wordDisplay {
+            min-height: 100px;
+            font-size: 3em;
+            color: #1e293b;
+            text-transform: uppercase;
+            font-weight: 800;
+            text-shadow: 0 0 10px rgba(0,0,0,0.1);
+            margin-top: 40px;
+        }
+        
+        /* Multiple columns for the long list */
+        .multi-col {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            font-size: 0.6em;
+            text-align: left;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            
+            <!-- Diapositiva 1 -->
+            <section class="glass-box" data-transition="zoom">
+                <h1>La falsa Memoria</h1>
+                <p style="margin-top: 20px; opacity: 0.7;">Raquel, Psicóloga</p>
+            </section>
+
+            <!-- Diapositiva 2 -->
+            <section data-transition="slide">
+                <div class="glass-box flex flex-col items-center justify-center">
+                    <h2>STEVE TITUS</h2>
+                    <img src="steve_titus.png" alt="Steve Titus Case" class="rounded-xl shadow-2xl" style="height: 400px; object-fit: cover; margin-top:20px;">
+                </div>
+            </section>
+
+            <!-- Diapositiva 3 -->
+            <section>
+                <h2>¿Cómo Recordamos?</h2>
+                <div class="glass-box" style="margin-top: 10px; padding-bottom: 20px; padding-top: 20px;">
+                    <p style="font-size: 1.5em; margin-bottom: 10px;"><strong>Memoria Multialmacén</strong></p>
+                    <img src="multialmacen.png" alt="Memoria Multialmacén Concepto" style="max-height: 400px; margin: 0 auto; display: block; border-radius: 10px;">
+                </div>
+            </section>
+
+            <!-- Diapositiva 4 -->
+            <section>
+                <h2>¿Dónde está la memoria en nuestro cerebro?</h2>
+                <div class="glass-box" style="margin-top: 40px;">
+                    <p style="font-size: 1.5em; color:#a78bfa;"><strong>HM</strong></p>
+                    <p>El paciente más estudiado de la historia de la ciencia.</p>
+                </div>
+                <img src="camara.png" class="icon-item" style="bottom: 15%; left: 5%;" alt="camara">
+            </section>
+
+            <!-- Diapositiva 5 -->
+            <section>
+                <img src="caracola.png" class="icon-item" style="top: 15%; right: 5%;" alt="caracola">
+                <h2>Neurona Jennifer Aniston.</h2>
+                <h3 style="color: #fb923c; margin-bottom:30px;">¡La importancia de olvidar, abstraer!</h3>
+                <div class="glass-box">
+                    <p><a href="https://www.youtube.com/watch?v=-wpbxCbumus&t=10s" target="_blank" rel="noopener noreferrer" class="hover:text-blue-600 transition-colors" style="color: #4f46e5; text-decoration: underline; font-weight: bold;">Borges, 'Funes el memorioso' y la neurona de Jennifer Aniston. R. Quian Quiroga, neurocientífico - YouTube</a></p>
+                </div>
+            </section>
+
+            <!-- Diapositiva 6 -->
+            <section>
+                <img src="castillo.png" class="icon-item" style="top: 15%; left: 5%;" alt="castillo">
+                <h2>Vamos a poner a prueba nuestra memoria</h2>
+                <p style="margin-bottom: 40px; opacity:0.8;">Escucha atentamente:</p>
+                
+                <button id="playWordsBtn" class="btn-play">▶ Iniciar Grabación (Listas)</button>
+                <div id="wordDisplay"></div>
+            </section>
+
+            <!-- Diapositiva 7 -->
+            <section>
+                <h2>Efectos de Primacía y Recencia.</h2>
+                <div class="glass-box" style="margin-top: 40px;">
+                    <p><strong>Roediger y McDermott (1995)</strong> prepararon 15 listas de palabras asociadas para comprobar la facilidad con que pueden crearse falsas memorias en individuos adultos.</p>
+                </div>
+                <img src="cometa.png" class="icon-item" style="bottom: 15%; right: 5%;" alt="cometa">
+            </section>
+
+            <!-- Diapositiva 8 -->
+            <section>
+                <img src="cubo.png" class="icon-item" style="top: 15%; left: 5%;" alt="cubo">
+                <h3 style="margin-bottom: 20px;">Listas de palabras</h3>
+                <div class="glass-box multi-col">
+                    <div>Azúcar<br>Caramelo<br>Miel<br>Pastel<br>Chocolate<br>Bombón<br>Galleta<br>Jarabe<br>Golosina<br>Postre<br>Confitura<br>Empalagoso</div>
+                    <div>Tarta<br>Repostería<br>Helado<br>Pico<br>Cima<br>Roca<br>Sendero<br>Escalada<br>Cordillera<br>Nieve<br>Valle<br>Altura</div>
+                    <div>Bosque<br>Precipicio<br>Refugio<br>Excursión<br>Naturaleza<br>Aventura<br>Canción<br>Letra<br>Melodía<br>Ritmo<br>Sonido<br>Instrumento</div>
+                    <div>Nota<br>Concierto<br>Orquesta<br>Armonía<br>Compás<br>Guitarra<br>Piano<br>Coro<br>Banda</div>
+                </div>
+            </section>
+
+            <!-- Diapositiva 9 -->
+            <section data-background-gradient="linear-gradient(to bottom, #f1f5f9, #e2e8f0)">
+                <h1 style="font-size: 4em; margin-bottom: 0;">Dulce,</h1>
+                <h1 style="font-size: 4em; margin-bottom: 0; color:#4f46e5;">Montaña,</h1>
+                <h1 style="font-size: 4em; color:#db2777;">Música</h1>
+                <img src="gafas.png" class="icon-item" style="top: 15%; right: 5%;" alt="gafas">
+            </section>
+
+            <!-- Diapositiva 10 -->
+            <section>
+                <img src="pala.png" class="icon-item" style="bottom: 15%; left: 5%;" alt="pala">
+                <div class="glass-box text-left">
+                    <p style="font-size: 1.3em; line-height: 1.6;">En EUA hubo un proyecto donde detectaron <strong>300 casos</strong> de personas inocentes condenadas, su inocencia se demostró con pruebas de ADN.</p>
+                    <hr style="border-color: rgba(0,0,0,0.1); margin: 30px 0;">
+                    <p style="font-size: 1.3em; line-height: 1.6; color:#e11d48;">Se determinó que <strong>¾ partes</strong> habían sido condenados basados en los <strong>recuerdos imperfectos de alguien.</strong></p>
+                </div>
+            </section>
+
+            <!-- Diapositiva 11 -->
+            <section>
+                <h2>Estudio de Bransford y Johnson (1972)</h2>
+                <div class="glass-box" style="margin-top: 30px;">
+                    <p style="font-size: 1.5em;"><strong>Cómo el contexto afecta la comprensión y el recuerdo</strong></p>
+                </div>
+                <img src="pelota.png" class="icon-item" style="top: 15%; right: 5%;" alt="pelota">
+            </section>
+
+            <!-- Diapositiva 12 -->
+            <section>
+                <img src="pez.png" class="icon-item" style="top: 15%; left: 5%;" alt="pez">
+                <h3 style="font-size:1.5em;">Entrevista cognitiva para encontrar objetos perdidos en casa</h3>
+                <div class="glass-box text-left" style="margin-top: 30px; display:inline-block;">
+                    <ul class="custom-list font-bold">
+                        <li>Recrea el contexto</li>
+                        <li>Cambia el orden de los recuerdos</li>
+                        <li>Perspectivas alternativas</li>
+                        <li>Detalles periféricos</li>
+                        <li>Evita la presión</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Diapositiva 13 -->
+            <section data-transition="fade">
+                <div class="quote-slide">
+                    <p>SIEMPRE QUE ME ACUERDO DE ALGO</p>
+                    <p>SIEMPRE LO RECUERDO UN POCO DIFERENTE</p>
+                    <p>Y SEA COMO SEA ESE RECUERDO</p>
+                    <p>SIEMPRE ES VERDAD EN MI MENTE</p>
+                </div>
+                <img src="toalla.png" class="icon-item" style="top: 15%; left: 45%;" alt="toalla">
+            </section>
+
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.js"></script>
+    <script>
+        Reveal.initialize({
+            hash: true,
+            controls: true,
+            progress: true,
+            center: true,
+            transition: 'slide' // none/fade/slide/convex/concave/zoom
+        });
+
+        // Script para reproducir las palabras temporalizadas (Diapositiva 6)
+        const wordList = [
+            "azúcar", "caramelo", "miel", "pastel", "chocolate", "bombón", 
+            "galleta", "jarabe", "golosina", "postre", "confitura", "empalagoso", 
+            "tarta", "repostería", "helado", "pico", "cima", "roca", 
+            "sendero", "escalada", "cordillera", "nieve", "valle", "altura", 
+            "bosque", "precipicio", "refugio", "excursión", "naturaleza", "aventura", 
+            "canción", "letra", "melodía", "ritmo", "sonido", "instrumento", 
+            "nota", "concierto", "orquesta", "armonía", "compás", "guitarra", 
+            "piano", "coro", "banda"
+        ];
+        
+        let playInterval;
+        let wordIndex = 0;
+        let isPlaying = false;
+
+        document.getElementById('playWordsBtn').addEventListener('click', function() {
+            if (isPlaying) return;
+            isPlaying = true;
+            this.style.opacity = '0.5';
+            this.textContent = "Reproduciendo...";
+            wordIndex = 0;
+            const display = document.getElementById('wordDisplay');
+            
+            // Si el navegador soporta síntesis de voz
+            const synth = window.speechSynthesis;
+
+            function showNextWord() {
+                if (wordIndex < wordList.length) {
+                    const currentWord = wordList[wordIndex];
+                    display.style.opacity = 0;
+                    
+                    setTimeout(() => {
+                        display.textContent = currentWord;
+                        display.style.opacity = 1;
+                        
+                        // Speak the word
+                        if(synth) {
+                            const utterThis = new SpeechSynthesisUtterance(currentWord);
+                            utterThis.lang = 'es-ES';
+                            utterThis.rate = 1.0;
+                            synth.speak(utterThis);
+                        }
+                    }, 300);
+
+                    wordIndex++;
+                    playInterval = setTimeout(showNextWord, 2000);
+                } else {
+                    isPlaying = false;
+                    document.getElementById('playWordsBtn').style.opacity = '1';
+                    document.getElementById('playWordsBtn').textContent = "▶ Iniciar Grabación (Listas)";
+                    display.textContent = "FIN DE LA LISTA";
+                }
+            }
+            
+            showNextWord();
+        });
+        
+        // Detener la reproducción al cambiar de diapositiva
+        Reveal.on('slidechanged', event => {
+            clearTimeout(playInterval);
+            if (window.speechSynthesis) window.speechSynthesis.cancel();
+            isPlaying = false;
+            document.getElementById('playWordsBtn').style.opacity = '1';
+            document.getElementById('playWordsBtn').textContent = "▶ Iniciar Grabación (Listas)";
+            document.getElementById('wordDisplay').textContent = "";
+        });
+
+        // ==========================================
+        // Lógica de Drag & Drop para iconos ocultos
+        // ==========================================
+        document.addEventListener('DOMContentLoaded', () => {
+            const icons = document.querySelectorAll('.icon-item');
+            
+            icons.forEach(icon => {
+                // Recuperar posición guardada o usar la de defecto
+                const savedPos = localStorage.getItem('icon_pos_' + icon.src);
+                if (savedPos) {
+                    const { x, y } = JSON.parse(savedPos);
+                    icon.style.left = x;
+                    icon.style.top = y;
+                    icon.style.bottom = 'auto'; // Limpiar bottom/right para evitar conflictos
+                    icon.style.right = 'auto';
+                }
+
+                // Evitar el arrastre por defecto de las imágenes HTML para no interferir
+                icon.ondragstart = () => false;
+
+                let isDragging = false;
+                let startX, startY, startLeft, startTop;
+
+                icon.addEventListener('mousedown', (e) => {
+                    isDragging = true;
+                    icon.style.zIndex = 1000;
+                    
+                    // Asegurar pos absoluta en píxeles
+                    const rect = icon.getBoundingClientRect();
+                    startLeft = rect.left;
+                    startTop = rect.top;
+                    
+                    // Limpiar right/bottom para usar solo left/top relativos al contenedor padre (.slides)
+                    const parentRect = icon.offsetParent.getBoundingClientRect();
+                    icon.style.left = (icon.offsetLeft) + 'px';
+                    icon.style.top = (icon.offsetTop) + 'px';
+                    icon.style.bottom = 'auto';
+                    icon.style.right = 'auto';
+
+                    startX = e.clientX;
+                    startY = e.clientY;
+                });
+
+                document.addEventListener('mousemove', (e) => {
+                    if (!isDragging) return;
+                    
+                    const dx = e.clientX - startX;
+                    const dy = e.clientY - startY;
+
+                    // Ajustamos el escalado mágico de Reveal.js para el drag
+                    const scale = Reveal.getScale();
+
+                    const currentLeft = parseFloat(icon.style.left) || 0;
+                    const currentTop = parseFloat(icon.style.top) || 0;
+
+                    icon.style.left = (currentLeft + dx / scale) + 'px';
+                    icon.style.top = (currentTop + dy / scale) + 'px';
+
+                    startX = e.clientX;
+                    startY = e.clientY;
+                });
+
+                document.addEventListener('mouseup', () => {
+                    if (isDragging) {
+                        isDragging = false;
+                        icon.style.zIndex = 100;
+                        
+                        // Guardar la nueva posición en localStorage
+                        localStorage.setItem('icon_pos_' + icon.src, JSON.stringify({
+                            x: icon.style.left,
+                            y: icon.style.top
+                        }));
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
