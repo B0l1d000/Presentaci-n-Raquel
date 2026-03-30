@@ -44,6 +44,11 @@
             border-radius: 20px;
             padding: 40px;
             box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        @media (max-width: 768px) {
+            .icon-item { width: 50px !important; }
         }
 
         .icon-item {
@@ -66,10 +71,10 @@
 
         .quote-slide {
             font-family: 'Georgia', serif;
-            font-size: 1.8em !important;
+            font-size: 1.3em !important;
             font-style: italic;
             color: #1e293b !important;
-            line-height: 1.8;
+            line-height: 1.5;
             background: -webkit-linear-gradient(45deg, #7c3aed, #db2777);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -142,29 +147,30 @@
             <section>
                 <h2>¿Dónde está la memoria en nuestro cerebro?</h2>
                 <div class="glass-box" style="margin-top: 40px;">
+                    <img src="camara.png" class="icon-item" style="top: -30px; left: -30px;" alt="camara">
                     <p style="font-size: 1.5em; color:#a78bfa;"><strong>HM</strong></p>
                     <p>El paciente más estudiado de la historia de la ciencia.</p>
                 </div>
-                <img src="camara.png" class="icon-item" style="bottom: 15%; left: 5%;" alt="camara">
             </section>
 
             <!-- Diapositiva 5 -->
             <section>
-                <img src="caracola.png" class="icon-item" style="top: 15%; right: 5%;" alt="caracola">
                 <h2>Neurona Jennifer Aniston.</h2>
                 <h3 style="color: #fb923c; margin-bottom:30px;">¡La importancia de olvidar, abstraer!</h3>
                 <div class="glass-box">
+                    <img src="caracola.png" class="icon-item" style="top: -30px; right: -30px;" alt="caracola">
                     <p><a href="https://www.youtube.com/watch?v=-wpbxCbumus&t=10s" target="_blank" rel="noopener noreferrer" class="hover:text-blue-600 transition-colors" style="color: #4f46e5; text-decoration: underline; font-weight: bold;">Borges, 'Funes el memorioso' y la neurona de Jennifer Aniston. R. Quian Quiroga, neurocientífico - YouTube</a></p>
                 </div>
             </section>
 
             <!-- Diapositiva 6 -->
             <section>
-                <img src="castillo.png" class="icon-item" style="top: 15%; left: 5%;" alt="castillo">
                 <h2>Vamos a poner a prueba nuestra memoria</h2>
                 <p style="margin-bottom: 40px; opacity:0.8;">Escucha atentamente:</p>
-                
-                <button id="playWordsBtn" class="btn-play">▶ Iniciar Grabación (Listas)</button>
+                <div style="position: relative; display: inline-block;">
+                    <img src="castillo.png" class="icon-item" style="top: -40px; left: -30px;" alt="castillo">
+                    <button id="playWordsBtn" class="btn-play">▶ Iniciar Grabación (Listas)</button>
+                </div>
                 <div id="wordDisplay"></div>
             </section>
 
@@ -172,16 +178,16 @@
             <section>
                 <h2>Efectos de Primacía y Recencia.</h2>
                 <div class="glass-box" style="margin-top: 40px;">
+                    <img src="cometa.png" class="icon-item" style="bottom: -30px; left: -30px;" alt="cometa">
                     <p><strong>Roediger y McDermott (1995)</strong> prepararon 15 listas de palabras asociadas para comprobar la facilidad con que pueden crearse falsas memorias en individuos adultos.</p>
                 </div>
-                <img src="cometa.png" class="icon-item" style="bottom: 15%; right: 5%;" alt="cometa">
             </section>
 
             <!-- Diapositiva 8 -->
             <section>
-                <img src="cubo.png" class="icon-item" style="top: 15%; left: 5%;" alt="cubo">
                 <h3 style="margin-bottom: 20px;">Listas de palabras</h3>
-                <div class="glass-box multi-col">
+                <div class="glass-box multi-col" style="position: relative;">
+                    <img src="cubo.png" class="icon-item" style="top: -30px; right: -30px;" alt="cubo">
                     <div>Azúcar<br>Caramelo<br>Miel<br>Pastel<br>Chocolate<br>Bombón<br>Galleta<br>Jarabe<br>Golosina<br>Postre<br>Confitura<br>Empalagoso</div>
                     <div>Tarta<br>Repostería<br>Helado<br>Pico<br>Cima<br>Roca<br>Sendero<br>Escalada<br>Cordillera<br>Nieve<br>Valle<br>Altura</div>
                     <div>Bosque<br>Precipicio<br>Refugio<br>Excursión<br>Naturaleza<br>Aventura<br>Canción<br>Letra<br>Melodía<br>Ritmo<br>Sonido<br>Instrumento</div>
@@ -191,16 +197,18 @@
 
             <!-- Diapositiva 9 -->
             <section data-background-gradient="linear-gradient(to bottom, #f1f5f9, #e2e8f0)">
-                <h1 style="font-size: 4em; margin-bottom: 0;">Dulce,</h1>
-                <h1 style="font-size: 4em; margin-bottom: 0; color:#4f46e5;">Montaña,</h1>
-                <h1 style="font-size: 4em; color:#db2777;">Música</h1>
-                <img src="gafas.png" class="icon-item" style="top: 15%; right: 5%;" alt="gafas">
+                <div style="position: relative; display: inline-block;">
+                    <img src="gafas.png" class="icon-item" style="top: -20px; left: -80px;" alt="gafas">
+                    <h1 style="font-size: 4em; margin-bottom: 0;">Dulce,</h1>
+                    <h1 style="font-size: 4em; margin-bottom: 0; color:#4f46e5;">Montaña,</h1>
+                    <h1 style="font-size: 4em; color:#db2777;">Música</h1>
+                </div>
             </section>
 
             <!-- Diapositiva 10 -->
             <section>
-                <img src="pala.png" class="icon-item" style="bottom: 15%; left: 5%;" alt="pala">
                 <div class="glass-box text-left">
+                    <img src="pala.png" class="icon-item" style="bottom: -30px; left: -30px;" alt="pala">
                     <p style="font-size: 1.3em; line-height: 1.6;">En EUA hubo un proyecto donde detectaron <strong>300 casos</strong> de personas inocentes condenadas, su inocencia se demostró con pruebas de ADN.</p>
                     <hr style="border-color: rgba(0,0,0,0.1); margin: 30px 0;">
                     <p style="font-size: 1.3em; line-height: 1.6; color:#e11d48;">Se determinó que <strong>¾ partes</strong> habían sido condenados basados en los <strong>recuerdos imperfectos de alguien.</strong></p>
@@ -211,17 +219,17 @@
             <section>
                 <h2>Estudio de Bransford y Johnson (1972)</h2>
                 <div class="glass-box" style="margin-top: 30px;">
+                    <img src="pelota.png" class="icon-item" style="top: -30px; right: -30px;" alt="pelota">
                     <p style="font-size: 1.5em;"><strong>Cómo el contexto afecta la comprensión y el recuerdo</strong></p>
                 </div>
-                <img src="pelota.png" class="icon-item" style="top: 15%; right: 5%;" alt="pelota">
             </section>
 
             <!-- Diapositiva 12 -->
             <section>
-                <img src="pez.png" class="icon-item" style="top: 15%; left: 5%;" alt="pez">
-                <h3 style="font-size:1.5em;">Entrevista cognitiva para encontrar objetos perdidos en casa</h3>
-                <div class="glass-box text-left" style="margin-top: 30px; display:inline-block;">
-                    <ul class="custom-list font-bold">
+                <h3 style="font-size:1.3em;">Entrevista cognitiva para encontrar objetos perdidos en casa</h3>
+                <div class="glass-box text-left" style="margin-top: 20px; display:inline-block; padding: 25px;">
+                    <img src="pez.png" class="icon-item" style="bottom: -20px; right: -20px;" alt="pez">
+                    <ul class="custom-list font-bold" style="font-size: 0.85em;">
                         <li>Recrea el contexto</li>
                         <li>Cambia el orden de los recuerdos</li>
                         <li>Perspectivas alternativas</li>
@@ -233,13 +241,13 @@
 
             <!-- Diapositiva 13 -->
             <section data-transition="fade">
-                <div class="quote-slide">
+                <div class="quote-slide" style="position: relative; display: inline-block;">
+                    <img src="toalla.png" class="icon-item" style="top: -40px; right: -40px;" alt="toalla">
                     <p>SIEMPRE QUE ME ACUERDO DE ALGO</p>
                     <p>SIEMPRE LO RECUERDO UN POCO DIFERENTE</p>
                     <p>Y SEA COMO SEA ESE RECUERDO</p>
                     <p>SIEMPRE ES VERDAD EN MI MENTE</p>
                 </div>
-                <img src="toalla.png" class="icon-item" style="top: 15%; left: 45%;" alt="toalla">
             </section>
 
         </div>
